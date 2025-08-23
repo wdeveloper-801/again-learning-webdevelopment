@@ -71,4 +71,4 @@ pro.forEach((item,) => {
     console.log(item.programings);
     
 });
-console.log(pro)
+
