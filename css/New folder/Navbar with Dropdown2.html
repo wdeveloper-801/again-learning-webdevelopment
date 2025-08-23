@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+
+    }
+
+    body {
+        color: white;
+        background-color: rgb(42, 165, 116);
+    }
+
+    nav {
+        width: 100%;
+        height: 50px;
+        cursor: pointer;
+        background-color: rgb(75, 18, 181);
+    }
+
+    ul {
+        display: flex;
+        justify-content: space-around;
+        line-height: 3;
+        list-style: none;
+        font-size: 20px;
+        position: relative;
+        z-index: 0;
+
+    }
+
+    .sub {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        z-index: 1000;
+        top: 250px;
+        background-color: rgb(75, 18, 181);
+        width: 200px;
+        left: 672px;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        border: 1px solid white;
+        transition: all 0.5s linear;
+    }
+
+    ul li:hover .sub {
+        transform: translate(0%, -100%);
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .li_a {
+         border: 1px solid white; 
+    } 
+
+    .li_a:hover {
+        background-color: rgb(55, 206, 0);
+
+        transition: all 0.5s linear;
+    }
+
+    a {
+        color: rgb(236, 236, 236);
+        text-decoration: none;
+        display: inline-block;
+
+    }
+
+    a:hover {
+        color: black;
+        text-decoration: underline;
+    }
+
+    li:hover {
+        color: red;
+
+    }
+</style>
+
+<body>
+    <div class="can">
+        <nav>
+            <ul>
+                <li>home</li>
+                <li>main
+                    <ul class="sub">
+                        <li class="li_a"> <a href="https://www.w3schools.com/js/js_objects.asp"
+                                target="_blank">object</a></li>
+                        <li class="li_a"><a href="https://www.w3schools.com/js/js_object_property.asp "
+                                target="_blank">object</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>others</li>
+            </ul>
+        </nav>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    BODY {
+        /* background-color: green */
+        background-image: url(img.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .can {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    .main {
+        width: 350px;
+        height: 600px;
+        border: 2px solid black;
+        background-color: rgb(19, 65, 217);
+        border-radius: 10px;
+    }
+
+    .can {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main {
+        width: 350px;
+        height: 600px;
+        border: 2px solid black;
+        background-color: rgba(19, 65, 217, 0.699);
+        border-radius: 20px;
+    }
+
+    .pic {
+        margin-top: 40px;
+        display: flex;
+        margin-left: 125px;
+        border-radius: 50%;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .inputemail {
+        width: 80%;
+        margin-left: 35px;
+        height: 30px;
+        border: none;
+        color: rgb(161, 0, 0);
+        background-color: rgba(137, 43, 226, 0.484);
+        font-size: 15px;
+        text-align: center;
+        margin-top: 60px;
+        color: white;
+    }
+
+    .inputpassword {
+        width: 80%;
+        margin-left: 35px;
+        height: 30px;
+        border: none;
+        color: rgb(33, 93, 63);
+        background-color: rgba(137, 43, 226, 0.484);
+        font-size: 15px;
+        text-align: center;
+        color: white;
+        margin-top: 30px;
+    }
+
+    .inputpassword::placeholder {
+        color: rgb(255, 255, 255);
+    }
+
+    .inputemail::placeholder {
+        color: rgb(255, 255, 255);
+    }
+
+    .btn {
+        width: 100px;
+        height: 30px;
+        border: none;
+        background-color: rgb(0, 0, 0);
+        color: white;
+        border-radius: 10px;
+        margin-top: 30px;
+    }
+
+
+
+    .Remember {
+        color: white;
+        position: relative;
+
+        left: 49px;
+    }
+
+    .checkbox {
+        position: relative;
+        top: -35px;
+        left: 29px;
+    }
+
+
+    .btn {
+        width: 100px;
+        height: 40px;
+        border: 2px none;
+        margin-left: 120px;
+        border-radius: 30px;
+        background-color: blueviolet;
+
+    }
+
+    .forgetp {
+        color: white;
+        margin-left: 120px;
+  
+    }
+
+    a {
+        margin-top: 80px;
+        text-decoration: none;
+        position: relative;
+        top: 10px;
+    }
+</style>
+
+<body>
+    <div class="can">
+        <div class="main">
+
+            <img src="ball.webp" alt="pic" class="pic" width="100px" height="100px">
+            <h1>login</h1>
+            <input type="email" class="inputemail" placeholder=" Enter your Email">
+
+            <div class="input">
+                <input type="password" class="inputpassword" placeholder=" Enter Your Password">
+                <p class="Remember">Remember me</p>
+                <input type="checkbox" name="" class="checkbox">
+            </div>
+
+            <button class="btn">Login</button>
+            <div>
+                <a href="#" class="forgetp">Forget Password</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

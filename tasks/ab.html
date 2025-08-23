@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            height: 100vh;
+            width: 100%;
+            background-color: aquamarine;
+        }
+
+        .cantainer {
+            
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr ;
+            grid-template-rows: repeat(4, 1fr);
+            /* grid-template-columns: 100px 100px 100px; */
+            /* grid-template-columns: repeat(3, 100px); */
+            /* gap: 10px; */
+            
+        }
+
+        .box {
+    /*  */margin: 10px;
+            border: 2px solid black;
+            /* padding: 10px; */
+            background-color: blueviolet;
+            display: flex;
+            align-items:center;
+            justify-content: center;
+            font-size: 2rem;
+            color: rgb(157, 189, 189);
+
+        }
+
+        .header ,.footer  {
+            grid-column-start: 1;
+            grid-column-end: 4;
+            background-color: red;
+            /* width: 100%; */
+           
+        }
+        .sidebar{
+            
+             grid-row-start: 2;
+            grid-row-end: 4;
+            background-color: yellow;
+            height: 200px;
+
+        }
+        .Context{
+            grid-column-start: 2;
+            grid-column-end: 4;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cantainer">
+        <div class=" box  header"><nav>home </nav> </div>
+        <div class="box sidebar">sidebar</div>
+        <div class="box Context">Context</div>
+        <div class="box">4</div>
+         <div class="box">5</div>
+        <div class="box footer">footer</div>
+
+    </div>
+</body>
+
+</html>

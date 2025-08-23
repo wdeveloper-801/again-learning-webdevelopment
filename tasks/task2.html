@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 730px;
+        background-image: url(img.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .box {
+        width: 333px;
+        height: 500px;
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.622);
+        border: 2px solid black;
+        display: flex;
+        justify-content: center;
+        padding-top: 30px;
+        font-size: 25PX;
+        font-family: "Oswald", sans-serif;
+    }
+
+    h1 {
+        position: absolute;
+    }
+
+    .word {
+        width: 70px;
+        height: 70px;
+        background-color: black;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 244px;
+        font-size: 44px;
+        font-weight: 500;
+    }
+
+    .inputem {
+        position: relative;
+        top: 245px;
+        left: 130px;
+    
+        border-radius: 20px;
+        height: 30px;
+        text-align: center;
+        border: 2px solid black;
+        background-color: transparent;
+        font-size: 20px;
+    }
+
+    .inputpass {
+        position: relative;
+        top: 295px;
+        right: 127px;
+        border-radius: 20px;
+        height: 30px;
+        text-align: center;
+        border: 2px solid black;
+        background-color: transparent;
+        font-size: 20px;
+    }
+
+    .btn {
+        position: absolute;
+        top: 493px;
+        width: 250px;
+        height: 40px;
+        border-radius: 20px;
+        background-color: transparent;
+        font-size: 20px;
+        transition: all 1s ease-in-out 0s;
+        border: 2px solid black;
+    }
+
+    .btn:hover {
+        transform: scale(1.2);
+        cursor: pointer;
+        background-color: rgb(15 27 216 / 50%);;
+    }
+
+    p {
+        position: absolute;
+        font-size: 12px;
+        font-weight: 300;
+        top: 567px;
+    }
+</style>
+
+<body>
+
+
+    <div class="container">
+        <div class="box">
+
+            <h1>WELCOME</h1>
+
+            <div class="word">A</div>
+
+            <input type="email" class="inputem" placeholder="Enter your email" required>
+            <div class="inpute">
+            </div>
+
+            <input type="password" class="inputpass" placeholder="Enter your password" required>
+            <div class="inputp">
+            </div>
+
+            <button class="btn">login</button>
+
+            <p> Don't have an account? <b><a href="#">sign up</a></b></p>
+
+        </div>
+    </div>
+
+</body>
+<script>
+
+    let btn = document.querySelector(".btn")
+
+    btn.addEventListener("click", function () {
+        alert("login button was clicked")
+    })
+
+</script>
+
+</html>
