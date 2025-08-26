@@ -1,26 +1,26 @@
-// function sirdoit(params) {
-//     let index = 0;
-//     // for ( index = 10; index <= 0; index--) {
-//     //     console.log("number of value is :",index);
-//     // }
-//     // let array = ["zik","ali","khan"]
-//     // console.log(array.length);
-//     // for (let index = 0; index < array.length; index++) {
-//     //     const element = array["the value is :",index];
-//     //     console.log(element);
-//     // }
-//     // for (let index = 0; index <= 10; index++) {
-//     //     const element = "2 * ", index*5;
-//     // }
-//     // for (let index = 0; index <= 10; index++) {
-//     //     console.log(`5 * ${index} = ${index*5}`);
-//     // }
-//     for (let index = 0; index <= 1000; index++) {
+function sirdoit(params) {
+    // let index = 0;
+    // for ( index = 10; index <= 0; index--) {
+    //     console.log("number of value is :",index);
+    // }
+    // let array = ["zik","ali","khan"]
+    // console.log(array.length);
+    // for (let index = 0; index < array.length; index++) {
+    //     const element = array["the value is :",index];
+    //     console.log(element);
+    // }
+    // for (let index = 0; index <= 10; index++) {
+    //     const element = "2 * ", index*5;
+    // }
+    // for (let index = 0; index <= 10; index++) {
+    //     console.log(`5 * ${index} = ${index*5}`);
+    // }
+    // for (let index = 0; index <= 1000; index++) {
 //         console.log(`${index} = muhammad zikria`);
 //         console.log(`${index} = muhammad saeed`);
 
 //     }
-// }
+}
 
 
 
@@ -72,10 +72,3 @@
 //simple differn betten for loop,while loop, do while loop, work are same but differnt in condition
 //for of loop and for in loop have different use case
 //over loops has been finshed.
-
-
-
-
-//part2 of loops
-
-
