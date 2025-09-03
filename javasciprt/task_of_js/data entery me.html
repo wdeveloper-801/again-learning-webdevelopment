@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  input {
+    height: 20px;
+    text-align: center;
+    margin: 5px;
+  }
+
+  button {
+    width: 120px;
+    height: 40px;
+    margin: 5px;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  td,
+  th {
+    border: 1px solid black;
+    padding: 10px;
+  }
+
+  TH {
+    background-color: #f0f0f0;
+  }
+</style>
+
+<body>
+  <input type="text" placeholder="Student Name" id="name"><br>
+  <input type="number" name="" id="m1" placeholder="marks1"><br>
+  <input type="number" name="" id="m2" placeholder="marks2"><br>
+  <input type="number" name="" id="m3" placeholder="marks3"><br>
+  <input type="number" name="" id="m4" placeholder="marks4"><br>
+  <input type="number" name="" id="m5" placeholder="marks5"><br>
+  <button id="btn"> Add Student</button>
+  <table id="Result_table">
+    <tr>
+      <th>roll_no</th>
+      <th>Name</th>
+      <th>Marks</th>
+      <th>Totol</th>
+      <th>Average</th>
+      <th>Grade</th>
+
+    </tr>
+  </table>
+
+</body>
+<script>
+  let btn = document.querySelector("#btn");
+  let roll_no = 1;
+  btn.addEventListener("click", function () {
+    let name = document.getElementById("name").value;
+    let m1 = Number(document.getElementById("m1").value);
+    let m2 = Number(document.getElementById("m2").value);
+    let m3 = Number(document.getElementById("m3").value);
+    let m4 = Number(document.getElementById("m4").value);
+    let m5 = Number(document.getElementById("m5").value);
+    let marks_show = [m1, m2, m3, m4, m5];
+    let total = m1 + m2 + m3 + m4 + m5;
+    let average = total / 500 * 100;
+    let grade;
+    if (average >= 80 && average <= 100) {
+      grade = "A+";
+    } else if (average >= 50 && average <= 79) {
+      grade = "A";
+    } else if (average >= 1 && average <= 49) {
+      grade = "F";
+    }
+    let table = document.getElementById("Result_table");
+    let row = table.insertRow();
+    row.insertCell(0).innerHTML = roll_no++;
+    row.insertCell(1).innerHTML = name;
+    row.insertCell(2).innerHTML = marks_show.join(", ");
+    row.insertCell(3).innerHTML = total;
+    row.insertCell(4).innerHTML = average.toFixed(2) + "%";
+    row.insertCell(5).innerHTML = grade;
+  })
+
+
+</script>
+
+</html>
