@@ -50,52 +50,51 @@ function j(params) {
 
 
 //2
+let btn = document.querySelector("#btn");
+btn.addEventListener("click", function () {
+    let units_quantity = document.querySelector("#number").value;
+    let unit_price;
+    let tax;
+    let final;
+    let final2;
+    if (units_quantity >= 1 && units_quantity <= 300) {
+        alert("unit price is 50")
+        unit_price = 50
+    }
+    else if (units_quantity >= 301 && units_quantity <= 500) {
+        alert("unit price is 80")
+        unit_price = 80
+    } else if (units_quantity >= 501 && units_quantity <= 1000) {
+        alert("unit price is 130")
+        unit_price = 130
+    } else if (units_quantity >= 1001) {
+        alert("unit price is 180")
+        unit_price = 180
+    } else {
+        return "invalid input";
+    }
+    final = units_quantity * unit_price;
+    if (final >= 1 && final <= 7000) {
+        alert("You will pay rupees 500 tax. because you crossed bill limit ")
+        tax = 500
+        final2 = tax + final;
+    } else if (final >= 7001 && final <= 13000) {
+        alert("You will pay rupees 1000 tax. because you crossed bill limit")
+        tax = 1000
+        final2 = tax + final;
+    } else if (final >= 13001) {
+        alert("You will pay rupees 2000 tax. because you crossed bill limit")
+        tax = 2000
+        final2 = tax + final;
+    } else {
+        return "invalid input";
+    }
 
-// let units_quantity = Number(prompt("Enter the units quantity"));
-// let unit_price;
-// let tax;
-// let final;
-// let final2;
+    final2 = tax + final;
 
-// function bill(units_quantity, unit_price, tax, final) {
+    alert(`Your total bill is ${final2}`);
 
-//     if (units_quantity >= 1 && units_quantity <= 300) {
-//         alert("unit price is 50")
-//         unit_price = 50
-//     }
-//     else if (units_quantity >= 301 && units_quantity <= 500) {
-//         alert("unit price is 80")
-//         unit_price = 80
-//     } else if (units_quantity >= 501 && units_quantity <= 1000) {
-//         alert("unit price is 130")
-//         unit_price = 130
-//     } else if (units_quantity >= 1001) {
-//         alert("unit price is 180")
-//         unit_price = 180
-//     } else {
-//         return "invalid input";
-//     }
-//     final = units_quantity * unit_price;
-//     if (final >= 1 && final <= 7000) {
-//         alert("You will pay rupees 500 tax. because you crossed bill limit ")
-//         tax = 500
-//         final2 = tax + final;
-//     } else if (final >= 7001 && final <= 13000) {
-//         alert("You will pay rupees 1000 tax. because you crossed bill limit")
-//         tax = 1000
-//         final2 = tax + final;
-//     } else if (final >= 13001) {
-//         alert("You will pay rupees 2000 tax. because you crossed bill limit")
-//         tax = 2000
-//         final2 = tax + final;
-//     } else {
-//         return "invalid input";
-//     }
-//     return final2
-// }
-// let bill_fun = bill(units_quantity, unit_price, tax, final)
-// alert(` your totol bill is ${bill_fun}`)
-
+});
 
 
 
@@ -126,7 +125,7 @@ function j(params) {
 
 
 //task3
-// let table = Number(prompt("Enter your table"));
+// l    et table = Number(prompt("Enter your table"));
 // let a = 1;
 // while (a <= 10) {
 //     console.log(`${table} x ${a} = ${a * table}`);
@@ -151,7 +150,7 @@ function j(params) {
 //         }
 //         else {
 //             console.log("not found");
-//         }    
+//         }
 //     }
 // }
 // odd_even_checker(aa);
@@ -164,24 +163,24 @@ function j(params) {
 
 
 
-let finder = prompt("which one you want print even or odd");
-function even(finder) {
-    if (finder == "even") {
-        for (let index = 1; index <= 10; index++) {
-            if (index % 2 == 0) {
-                console.log(`${index} is even number`);
+// let finder = prompt("which one you want print even or odd");
+// function even(finder) {
+//     if (finder == "even") {
+//         for (let index = 1; index <= 10; index++) {
+//             if (index % 2 == 0) {
+//                 console.log(`${index} is even number`);
 
-            }
+//             }
 
-        }
-    } else if (finder == "odd") {
-        for (let index = 1; index <= 10; index++) {
-            if (index % 2 !== 0) {
-                console.log(`${index} is odd number`);
-            }
-        }
-    }
-}
-even(finder);
+//         }
+//     } else if (finder == "odd") {
+//         for (let index = 1; index <= 10; index++) {
+//             if (index % 2 !== 0) {
+//                 console.log(`${index} is odd number`);
+//             }
+//         }
+//     }
+// }
+// even(finder);
 
 
