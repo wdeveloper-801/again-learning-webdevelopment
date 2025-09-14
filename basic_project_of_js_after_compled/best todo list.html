@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f5f5f5;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    h1 {
+        font-size: 30px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    input {
+        width: 200px;
+        height: 30px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        padding: 5px;
+    }
+
+    .btn {
+        margin-left: 10px;
+        padding: 8px 15px;
+        border: none;
+        background: blueviolet;
+        color: white;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-top: 11px;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: blueviolet;
+        color: white;
+        border-radius: 10px;
+        margin-top: 10px;
+        padding: 10px;
+        width: 300px;
+    }
+
+    li span {
+
+        flex: 1;
+        text-align: left;
+    }
+
+
+
+    .deletBtn {
+        background: red;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    .compled {
+        background: greenyellow;
+        color: black;
+        border: none;
+        cursor: pointer;
+    }
+
+    .edit {
+        background: orange;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <div class="main">
+        <h1>Todo List</h1>
+        <input type="text" id="input">
+        <button class="btn" id="btn">CLICK</button>
+        <ul id="todoList">
+        </ul>
+    </div>
+</body>
+<script>
+
+    let input = document.getElementById('input')
+    let btn = document.getElementById('btn')
+    let todoList = document.getElementById('todoList')
+    btn.addEventListener('click', function () {
+        let li = document.createElement('li')
+
+
+        let span = document.createElement('span')
+        span.innerText = input.value
+        li.appendChild(span)
+
+        // delet btn
+        let deletBtn = document.createElement('button')
+        deletBtn.innerText = "d"
+        deletBtn.className = "deletBtn"
+        deletBtn.addEventListener("click", function (params) {
+            li.remove()
+        })
+        //compled
+        let compled = document.createElement('button')
+        compled.innerText = "c"
+        compled.className = "compled"
+        compled.addEventListener("click", function (params) {
+            if (li.style.textDecoration === "line-through") {
+                li.style.textDecoration = "none";
+            } else {
+                li.style.textDecoration = "line-through";
+            }
+        })
+
+        //edit btn
+        let edit = document.createElement('button')
+        edit.innerText = "e"
+        edit.className = "edit"
+        edit.addEventListener("click", function (params) {
+            if (span.contentEditable === true) {
+                span.contentEditable = false;
+                edit.innerText = "e";
+            } else {
+                span.contentEditable = true;
+                span.focus()
+                edit.innerText = "☑";
+            }
+        })
+        //appen  btn
+        li.appendChild(edit)
+        li.appendChild(compled)
+        li.appendChild(deletBtn)
+        todoList.appendChild(li)
+    })
+    input.addEventListener("keyup", function () {
+        let text = input.value.toLowerCase()
+       let items = document.querySelectorAll("#todoList li ");
+       items.forEach(function (a) {
+            let text2 = a.innerText.toLowerCase()
+            if (text2.includes(text)) {
+                a.style.display = ""
+            } else {
+                a.style.display = "none"
+            }
+        })
+    })
+</script>
+
+</html>

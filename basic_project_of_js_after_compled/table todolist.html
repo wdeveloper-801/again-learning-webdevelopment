@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .input {
+        width: 200px;
+        height: 30px;
+        margin: 10px;
+    }
+
+    .btn {
+        width: 100px;
+        height: 30px;
+        margin: 10px;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    td {
+        min-width: 200px;
+        height: 50px;
+        border: 2px solid black;
+        text-align: center;
+        background-color: rgb(7, 125, 228);
+        color: white;
+        padding: 10px;
+    }
+
+
+    .deletBtn {
+        background-color: rgb(255, 0, 0);
+        width: 40px;
+        height: 40px;
+        font-weight: bolder;
+        cursor: pointer;
+    }
+
+    .compled {
+        background-color: rgb(12, 220, 40);
+        width: 40px;
+        height: 40px;
+        font-weight: bolder;
+        cursor: pointer;
+    }
+
+    .edit {
+        background-color: rgb(220, 12, 217);
+        width: 40px;
+        height: 40px;
+        font-weight: bolder;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <div class="main">
+        <h1>Todo List</h1>
+        <input type="text" id="input" class="input" placeholder="Enter something">
+        <button id="btn" class="btn">click</button>
+        <table></table>
+    </div>
+</body>
+<script>
+    let input = document.querySelector('#input')
+    let btn = document.querySelector('#btn')
+    let table = document.querySelector('table')
+    btn.addEventListener('click', function () {
+        let row = table.insertRow()
+        let cell = row.insertCell()
+        let cell1 = row.insertCell()
+
+
+        //completed
+        let completedBtn = document.createElement('button')
+        completedBtn.innerText = 'c'
+        completedBtn.className = "compled"
+        completedBtn.addEventListener('click', function () {
+            span.style.textDecoration = 'line-through'
+        })
+
+
+
+        //deleted
+        let deletBtn = document.createElement('button')
+        deletBtn.innerText = 'd'
+        deletBtn.className = "deletBtn"
+        deletBtn.addEventListener('click', function () {
+            row.remove()
+
+
+
+            // 
+        })
+        // compled
+        let compled = document.createElement('button')
+        compled.innerText = 'c'
+        compled.className = "compled"
+        compled.addEventListener('click', function () {
+            if (cell.style.textDecoration === 'line-through') {
+                cell.style.textDecoration = 'none'
+            } else {
+                cell.style.textDecoration = 'line-through'
+            }
+        })
+
+        let span = document.createElement('span')
+        span.innerText = input.value
+        cell.appendChild(span)
+
+
+
+        // edit
+        let edit = document.createElement('button')
+        edit.innerText = 'e'
+        edit.className = "edit"
+        edit.addEventListener('click', function () {
+            if (span.contentEditable === true) {
+                span.contentEditable = false
+                span.style.outline = "none"; // remove editing style
+
+            } else {
+                span.contentEditable = true
+            }
+        })
+
+        cell1.appendChild(edit)
+        cell1.appendChild(deletBtn)
+        cell1.appendChild(compled)
+    })
+    input.addEventListener('keyup', function () {
+        let text = input.value.toLowerCase()
+        let filter = document.querySelectorAll('table td')
+        filter.forEach(function (cell) {
+            let cellText = cell.innerText.toLowerCase()
+            if (cellText.includes(text)) {
+                cell.style.display = ''
+            } else {
+                cell.style.display = 'none'
+            }
+        })
+    })
+</script>
+
+</html>
